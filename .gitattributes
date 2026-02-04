@@ -1,0 +1,5 @@
+# Enforce Unix line endings for the gradlew script
+gradlew text eol=lf
+
+# Default for other files
+* text=auto
