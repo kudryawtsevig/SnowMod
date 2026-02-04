@@ -46,10 +46,12 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    // LOCAL MAVEN REPOSITORY FIRST!
-    maven {
-        name = 'LocalMaven'
-        url = uri("file://${project.projectDir}/local-maven")
+    // LOCAL MAVEN REPOSITORY FIRST (Only if exists)
+    if (file("${project.projectDir}/local-maven").exists()) {
+        maven {
+            name = 'LocalMaven'
+            url = uri("file://${project.projectDir}/local-maven")
+        }
     }
     
     mavenCentral()
