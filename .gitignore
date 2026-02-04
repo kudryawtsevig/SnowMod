@@ -1,0 +1,36 @@
+# Gradle files
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# IntelliJ IDEA
+.idea/
+*.ipr
+*.iml
+*.iws
+out/
+run/
+run-data/
+
+# Local build / Temp files
+downloaded-deps/
+local-maven/
+forge-*-mdk/
+libs/
+*.log
+*.txt
+*.ps1
+*.md
+!README.md
+!README_RU.md
+
+# OS specific
+.DS_Store
+Thumbs.db

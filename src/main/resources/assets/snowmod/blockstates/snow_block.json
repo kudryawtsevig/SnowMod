@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "snowmod:block/snow_block"
+        }
+    }
+}
