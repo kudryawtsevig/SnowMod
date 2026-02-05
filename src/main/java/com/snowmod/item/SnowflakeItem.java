@@ -1,6 +1,9 @@
 package com.snowmod.item;
 
+import java.util.List;
+
 import com.snowmod.init.ModBlocks;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -8,7 +11,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,8 +22,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-
-import java.util.List;
 
 public class SnowflakeItem extends Item {
     private static final int FREEZE_DURATION = 600; // 30 seconds (20 ticks per second)
@@ -45,7 +45,7 @@ public class SnowflakeItem extends Item {
                 state.is(Blocks.SAND) || state.is(Blocks.RED_SAND) ||
                 state.is(Blocks.GRAVEL) || state.is(Blocks.STONE)) {
 
-            if (!level.isClientSide) {
+            if (!level.isClientSide()) {
                 // Transform block to snow block
                 level.setBlock(pos, ModBlocks.SNOW_BLOCK.get().defaultBlockState(), 3);
 
