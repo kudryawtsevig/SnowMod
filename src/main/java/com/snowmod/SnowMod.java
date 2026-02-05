@@ -2,7 +2,6 @@ package com.snowmod;
 
 import com.snowmod.init.ModBlocks;
 import com.snowmod.init.ModItems;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
@@ -14,11 +13,9 @@ public class SnowMod {
     public static final Logger LOGGER = LoggerFactory.getLogger(SnowMod.class);
 
     public SnowMod(FMLJavaModLoadingContext context) {
-        IEventBus modEventBus = context.getModEventBus();
-
         // Register items and blocks
-        ModItems.ITEMS.register(modEventBus);
-        ModBlocks.BLOCKS.register(modEventBus);
+        ModItems.ITEMS.register(context.getModEventBus());
+        ModBlocks.BLOCKS.register(context.getModEventBus());
 
         LOGGER.info("SnowMod initialized!");
     }
