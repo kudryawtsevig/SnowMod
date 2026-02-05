@@ -8,7 +8,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.item.InteractionResultHolder;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -70,8 +70,7 @@ public class SnowflakeItem extends Item {
     }
 
     @Override
-    public InteractionResultHolder<net.minecraft.world.item.ItemStack> use(Level level, Player player,
-            InteractionHand hand) {
+    public ItemInteractionResult use(Level level, Player player, InteractionHand hand) {
         net.minecraft.world.item.ItemStack itemStack = player.getItemInHand(hand);
 
         if (!level.isClientSide) {
@@ -110,10 +109,10 @@ public class SnowflakeItem extends Item {
                 // Consume item
                 itemStack.shrink(1);
 
-                return InteractionResultHolder.success(itemStack);
+                return ItemInteractionResult.SUCCESS;
             }
         }
 
-        return InteractionResultHolder.pass(itemStack);
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 }
