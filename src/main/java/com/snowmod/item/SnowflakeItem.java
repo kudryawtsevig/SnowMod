@@ -73,7 +73,7 @@ public class SnowflakeItem extends Item {
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
         net.minecraft.world.item.ItemStack itemStack = player.getItemInHand(hand);
 
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
             // Find all living entities within radius
             AABB searchBox = new AABB(
                     player.getX() - FREEZE_RADIUS, player.getY() - FREEZE_RADIUS, player.getZ() - FREEZE_RADIUS,
@@ -85,7 +85,7 @@ public class SnowflakeItem extends Item {
             if (!entities.isEmpty()) {
                 for (LivingEntity entity : entities) {
                     // Apply freeze effects
-                    entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, FREEZE_DURATION, EFFECT_LEVEL,
+                    entity.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, FREEZE_DURATION, EFFECT_LEVEL,
                             false, true));
                     entity.addEffect(
                             new MobEffectInstance(MobEffects.BLINDNESS, FREEZE_DURATION, EFFECT_LEVEL, false, true));
