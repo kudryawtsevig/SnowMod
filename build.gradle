@@ -64,8 +64,8 @@ repositories {
         url = 'https://libraries.minecraft.net'
     }
     maven {
-        name = 'Minecraft libraries'
-        url = 'https://libraries.minecraft.net'
+        name = 'Mojang'
+        url = 'https://piston-meta.mojang.com'
     }
     flatDir {
         dir 'libs'
