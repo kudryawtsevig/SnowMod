@@ -13,8 +13,8 @@ public class SnowMod {
     public static final String MOD_ID = "snowmod";
     public static final Logger LOGGER = LoggerFactory.getLogger(SnowMod.class);
 
-    public SnowMod() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public SnowMod(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
 
         // Register items and blocks
         ModItems.ITEMS.register(modEventBus);
